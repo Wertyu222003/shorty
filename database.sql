@@ -1,12 +1,4 @@
-#
-# Table schema for MySQL
-#
-CREATE TABLE urls (
-    id INT UNSIGNED NOT NULL AUTO_INCREMENT,
-    url VARCHAR(1000) NOT NULL,
-    created DATETIME NOT NULL,
-    accessed DATETIME,
-    hits INT UNSIGNED NOT NULL DEFAULT 0,
-    PRIMARY KEY (id),
-    UNIQUE (url)
-);
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php?q=$1 [QSA,L]
